@@ -33,7 +33,9 @@ def septic_check():
     
     """
     since we can't actually hit the housecanary API, we'll pretend
-    response = requests.get(f"https://api.housecanary.com/v2/property/details?address={request_params["address"]}&zipcode={request_params["zip"]}", headers={"api_key": "fkjdfkd_4555jfdsd"})
+    response = requests.get(
+        f"https://api.housecanary.com/v2/property/details?address={request_params["address"]}&zipcode={request_params["zip"]}", headers={"api_key": "fkjdfkd_4555jfdsd"}
+    )
     """
 
     current_property = {}
@@ -55,9 +57,6 @@ def septic_check():
             "address": current_property["address"],
             "septic": False
         })
-    
-
-    return jsonify(request_params)
 
 
 if __name__ == '__main__':
